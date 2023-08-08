@@ -2,11 +2,14 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './templates');
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/templates/index.html');
+    res.render('index', { name: 'nika', id: 2 });
 });
 app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/templates/about.html');
+    res.render('about');
 });
 
 let port = 3001;
