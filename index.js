@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('hello express');
+    res.sendFile(__dirname + '/templates/index.html');
 });
 app.get('/about', (req, res) => {
-    res.send('about text');
+    res.sendFile(__dirname + '/templates/about.html');
 });
 
 let port = 3001;
